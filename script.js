@@ -1,6 +1,6 @@
 // Initialisation de Backendless avec tes identifiants personnels :
 const APP_ID = "75F9B527-FE0B-4C7E-B2F4-1AD71EE054A0";
-const API_KEY = "E1A90B54-EE4C-4CF1-939E-B789795D8C72";
+const API_KEY = "60E69D44-7601-447C-B228-6E26EE396C20";
 const TABLE_NAME = "inscriptions";
 
 Backendless.initApp(APP_ID, API_KEY);
