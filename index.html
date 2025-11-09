@@ -1,119 +1,195 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription 2025</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription 2025</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #002244, #004488);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.4);
+    }
+    form {
+      background-color: rgba(255,255,255,0.1);
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
+    button {
+      background-color: #00ff88;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #00cc66;
+    }
+    .message {
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="overlay"></div>
+  <header>
+    <h1>INSCRIPTION 2025</h1>
+  </header>
 
-    <header>
-        <h1>INSCRIPTION 2025</h1>
-    </header>
+  <main>
+    <form id="formInscription">
+      <div class="form-group">
+        <label>Nom :</label>
+        <input type="text" name="nom" required placeholder="Ex : ONESIME">
+      </div>
 
-    <main>
-        <form id="formInscription">
-            <div class="form-group">
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" required placeholder="Ex : ONESIME">
-            </div>
+      <div class="form-group">
+        <label>Postnom :</label>
+        <input type="text" name="postnom" required placeholder="Ex : NANINKASA">
+      </div>
 
-            <div class="form-group">
-                <label for="postnom">Postnom :</label>
-                <input type="text" id="postnom" required placeholder="Ex : NANINKASA">
-            </div>
+      <div class="form-group">
+        <label>Prénom :</label>
+        <input type="text" name="prenom" required placeholder="Ex : Samuel">
+      </div>
 
-            <div class="form-group">
-                <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" required placeholder="Ex : Samuel">
-            </div>
+      <div class="form-group">
+        <label>Genre :</label>
+        <select name="genre" required>
+          <option value="">-- Sélectionnez --</option>
+          <option>Masculin</option>
+          <option>Féminin</option>
+        </select>
+      </div>
 
-            <div class="form-group">
-                <label for="genre">Genre :</label>
-                <select id="genre" required>
-                    <option value="">-- Sélectionnez --</option>
-                    <option>Masculin</option>
-                    <option>Féminin</option>
-                </select>
-            </div>
+      <div class="form-group">
+        <label>Lieu de naissance :</label>
+        <input type="text" name="lieu_naissance" required placeholder="Ex : Kwilu-Ngongo">
+      </div>
 
-            <div class="form-group">
-                <label for="lieu">Lieu de naissance :</label>
-                <input type="text" id="lieu" required placeholder="Ex : Kwilu-ngongo">
-            </div>
+      <div class="form-group">
+        <label>Date de naissance :</label>
+        <input type="date" name="date_naissance" required>
+      </div>
 
-            <div class="form-group">
-                <label for="dateNaissance">Date de naissance :</label>
-                <input type="date" id="dateNaissance" required>
-            </div>
+      <div class="form-group">
+        <label>Nom du père :</label>
+        <input type="text" name="nom_pere" placeholder="Ex : DIANGANI">
+      </div>
 
-            <div class="form-group">
-                <label for="pere">Nom du père :</label>
-                <input type="text" id="pere" placeholder="Ex : DIANGANI">
-            </div>
+      <div class="form-group">
+        <label>Nom de la mère :</label>
+        <input type="text" name="nom_mere" placeholder="Ex : NDUNDU">
+      </div>
 
-            <div class="form-group">
-                <label for="mere">Nom de la mère :</label>
-                <input type="text" id="mere" placeholder="Ex : NDUNDU">
-            </div>
+      <div class="form-group">
+        <label>École fréquentée :</label>
+        <input type="text" name="ecole_frequentee" required placeholder="Ex : Collège Boboto">
+      </div>
 
-            <div class="form-group">
-                <label for="ecole">École fréquentée :</label>
-                <input type="text" id="ecole" required placeholder="Ex : Collège Boboto">
-            </div>
+      <div class="form-group">
+        <label>Année de fin :</label>
+        <input type="number" name="annee_fin" required placeholder="Ex : 2024">
+      </div>
 
-            <div class="form-group">
-                <label for="annee">Année de fin :</label>
-                <input type="number" id="annee" required placeholder="Ex : 2024">
-            </div>
+      <div class="form-group">
+        <label>Faculté :</label>
+        <select name="faculte" required>
+          <option value="">-- Choisissez une faculté --</option>
+          <option>Agronomie</option>
+          <option>Droit</option>
+          <option>Environnement</option>
+          <option>Théologie</option>
+          <option>Informatique de gestion</option>
+          <option>Télécommunication et réseaux</option>
+          <option>Sciences infirmières</option>
+          <option>Santé Publique</option>
+          <option>Sciences économiques</option>
+          <option>Sciences de la communication</option>
+          <option>Sciences Sociales Politiques et Administratives</option>
+          <option>Sciences économiques et Gestion d'entreprise</option>
+          <option>Centre d'apprentissage d'anglais</option>
+          <option>Centre d'apprentissage d'informatique</option>
+        </select>
+      </div>
 
-            <div class="form-group">
-                <label for="faculte">Faculté :</label>
-                <select id="faculte" required>
-                    <option value="">-- Choisissez une faculté --</option>
-                    <option>Agronomie</option>
-                    <option>Droit</option>
-                    <option>Environnement</option>
-                    <option>Droit</option>
-                    <option>Théologie</option>
-                    <option>Informatique de gestion</option>
-                    <option>Télécommunication et réseaux</option>
-                    <option>Sciences infirmières</option>
-                    <option>Santé Publique</option>
-                    <option>Sciences économiques</option>
-                     <option>Sciences de la communication</option>
-                    <option>Sciences Sociales Politiques et Administratives</option>
-                    <option>Sciences écnomiques et Geston d'entreprise</option>
-                    <option>Centre d'apprentissage d'anglais</option>
-                    <option>Centre d'apprentissage d'informatique</option>
-                </select>
-            </div>
+      <div class="form-group">
+        <label>Filiale :</label>
+        <select name="filiale" required>
+          <option value="">-- Sélectionnez un partenaire --</option>
+          <option>Camp BARAMOTO</option>
+          <option>Camp Tshatshi</option>
+          <option>Vide</option>
+        </select>
+      </div>
 
-            <div class="form-group">
-                <label for="filiale">Filiale :</label>
-                <select id="filiale" required>
-                    <option value="">-- Sélectionnez un partenaire --</option>
-                    <option>Camp BARAMOTO</option>
-                    <option>Camp Tshatshi</option>
-                    <option>Vide</option>
-                    <option>Vide</option>
-                </select>
-            </div>
+      <button type="submit">Soumettre</button>
+    </form>
 
-            <button type="submit">Soumettre</button>
-        </form>
+    <p id="message" class="message"></p>
+  </main>
 
-        <p id="message" class="message"></p>
-    </main>
+  <footer>
+    <p>📞 +243 900 000 000 | ✉️ contact@centre2025.cd</p>
+    <p>📲 WhatsApp : <a href="https://wa.me/243900000000" target="_blank">Rejoignez notre chaîne</a></p>
+  </footer>
 
-    <footer>
-        <p>📞 Contact : +243 900 000 000 | ✉️ Email : contact@centre2025.cd</p>
-        <p>📲 WhatsApp : <a href="https://wa.me/243900000000" target="_blank">Rejoignez notre chaîne</a></p>
-    </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backendless/6.2.9/backendless.min.js"></script>
+  <script>
+    const APP_ID = "75F9B527-FE0B-4C7E-B2F4-1AD71EE054A0";
+    const API_KEY = "60E69D44-7601-447C-B228-6E26EE396C20"; // ⚠️ Mets ici la clé JavaScript (pas REST)
+    const TABLE_NAME = "inscriptions";
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/backendless/6.2.9/backendless.min.js"></script>
-    <script src="script.js"></script>
+    Backendless.initApp(APP_ID, API_KEY);
+
+    const form = document.getElementById("formInscription");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        await Backendless.Data.of(TABLE_NAME).save(data);
+        message.textContent = "✅ Inscription enregistrée avec succès !";
+        message.style.color = "#00ff88";
+        form.reset();
+      } catch (error) {
+        console.error("Erreur Backendless :", error);
+        message.textContent = "❌ Erreur : " + error.message;
+        message.style.color = "#ff4444";
+      }
+    });
+  </script>
 </body>
 </html>
