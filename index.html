@@ -1,121 +1,137 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Créer un compte – Thoth</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/backendless"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription 2025 – Thoth</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/backendless"></script>
 </head>
 <body>
+    <div class="overlay"></div>
 
-  <div class="overlay">
-    <!-- Bouton retour -->
-    <a href="index.html" class="btn-back" onclick="vibrateButton()">
-      &#8592; Retour
-    </a>
-    <h1>Créer un compte</h1>
-    <p>Rejoignez-nous pour explorer la ligne temporelle</p>
+    <header>
+        <h1>INSCRIPTION 2025</h1>
+        <p>Rejoignez-nous pour explorer la ligne temporelle</p>
+    </header>
 
-    <form id="signupForm">
-      <input type="email" name="email" placeholder="exemple@domaine.com" required>
-      <input type="text" name="nom" placeholder="BADESI Christian" required>
-      <input type="text" name="institut" placeholder="Université de Kongo" required>
-      <input type="text" name="option" placeholder="Informatique / Médecine" required>
+    <main>
+        <form id="signupForm" class="signup-form">
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" name="email" id="email" placeholder="exemple@domaine.com" required>
+            </div>
 
-      <!-- Champ Genre -->
-      <label for="genre">Genre :</label>
-      <select name="genre" id="genre" required>
-        <option value="">-- Sélectionnez --</option>
-        <option value="Homme">Homme</option>
-        <option value="Femme">Femme</option>
-      </select>
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" name="nom" id="nom" placeholder="Ex : BADESI" required>
+            </div>
 
-      <!-- Champ Abonnement -->
-      <label for="abonnement">Type d'abonnement :</label>
-      <select name="abonnement" id="abonnement" required>
-        <option value="">-- Sélectionnez --</option>
-        <option value="Individuel">Individuel</option>
-        <option value="Collectif">Collectif</option>
-        <option value="Institutionnel">Institutionnel</option>
-      </select>
+            <div class="form-group">
+                <label for="institut">Institut / Université :</label>
+                <input type="text" name="institut" id="institut" placeholder="Ex : Université de Kongo" required>
+            </div>
 
-      <label for="montant">Prix d'un abonnement individuel :</label>
-      <select name="montant" id="montant" required>
-        <option value="">-- Sélectionnez --</option>
-        <option value="Hebdomadaire">Hebdomadaire = 2$</option>
-        <option value="Mensuel">Mensuel = 5$</option>
-        <option value="Negociable">Entreprise/Institution</option>
-      </select>
+            <div class="form-group">
+                <label for="option">Option / Spécialité :</label>
+                <input type="text" name="option" id="option" placeholder="Ex : Informatique / Médecine" required>
+            </div>
 
-      <button type="submit" class="btn-connexion" onclick="vibrateButton()">S'inscrire</button>
-    </form>
+            <div class="form-group">
+                <label for="genre">Genre :</label>
+                <select name="genre" id="genre" required>
+                    <option value="">-- Sélectionnez --</option>
+                    <option value="Homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                </select>
+            </div>
 
-    <!-- Messages -->
-    <p id="successMessage">Un email de confirmation a été envoyé à votre adresse. Veuillez vérifier votre boîte de réception pour obtenir le matricule.</p>
-    <p id="errorMessage"></p>
-  </div>
-  
-  <script>
-    // Backendless config
-    const APP_ID = "75F9B527-FE0B-4C7E-B2F4-1AD71EE054A0";
-    const API_KEY = "60E69D44-7601-447C-B228-6E26EE396C20";
-    const TABLE  = "membres";
+            <div class="form-group">
+                <label for="abonnement">Type d'abonnement :</label>
+                <select name="abonnement" id="abonnement" required>
+                    <option value="">-- Sélectionnez --</option>
+                    <option value="Individuel">Individuel</option>
+                    <option value="Collectif">Collectif</option>
+                    <option value="Institutionnel">Institutionnel</option>
+                </select>
+            </div>
 
-    Backendless.initApp(APP_ID, API_KEY);
+            <div class="form-group">
+                <label for="montant">Prix / Durée :</label>
+                <select name="montant" id="montant" required>
+                    <option value="">-- Sélectionnez --</option>
+                    <option value="Hebdomadaire">Hebdomadaire = 2$</option>
+                    <option value="Mensuel">Mensuel = 5$</option>
+                    <option value="Negociable">Entreprise / Institution</option>
+                </select>
+            </div>
 
-    // Vibration
-    function vibrateButton() {
-      if (navigator.vibrate) navigator.vibrate(100);
-    }
+            <button type="submit" class="btn-submit">S'inscrire</button>
 
-    const form = document.getElementById('signupForm');
-    const successMessage = document.getElementById('successMessage');
-    const errorMessage = document.getElementById('errorMessage');
+            <p id="successMessage" class="message success">Un email de confirmation a été envoyé à votre adresse.</p>
+            <p id="errorMessage" class="message error"></p>
+        </form>
+    </main>
 
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
+    <footer>
+        <p>📞 Contact : +243 900 000 000 | ✉️ Email : contact@centre2025.cd</p>
+        <p>📲 WhatsApp : <a href="https://wa.me/243900000000" target="_blank">Rejoignez notre chaîne</a></p>
+    </footer>
 
-      const email = form.email.value.trim();
-      const nom = form.nom.value.trim();
-      const institut = form.institut.value.trim();
-      const option = form.option.value.trim();
-      const genre = form.genre.value.trim();
-      const abonnement = form.abonnement.value.trim();
-      const montant = form.montant.value.trim();
+    <script>
+        // Backendless config
+        const APP_ID = "75F9B527-FE0B-4C7E-B2F4-1AD71EE054A0";
+        const API_KEY = "60E69D44-7601-447C-B228-6E26EE396C20";
+        const TABLE  = "membres";
 
-      try {
-        const query = Backendless.Data.QueryBuilder.create().setWhereClause(`email = '${email}'`);
-        const existing = await Backendless.Data.of(TABLE).find(query);
+        Backendless.initApp(APP_ID, API_KEY);
 
-        if (existing.length > 0) {
-          errorMessage.style.display = "block";
-          errorMessage.textContent = "Ce compte existe déjà !";
-          return;
-        }
+        const form = document.getElementById('signupForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
 
-        const membre = { email, nom, institut, option, genre, abonnement, montant };
-        await Backendless.Data.of(TABLE).save(membre);
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-        successMessage.style.display = "block";
-        errorMessage.style.display = "none";
-        form.reset();
+            const email = form.email.value.trim();
+            const nom = form.nom.value.trim();
+            const institut = form.institut.value.trim();
+            const option = form.option.value.trim();
+            const genre = form.genre.value.trim();
+            const abonnement = form.abonnement.value.trim();
+            const montant = form.montant.value.trim();
 
-        setTimeout(() => {
-          window.location.replace("login.html");
-        }, 8000);
+            try {
+                const query = Backendless.Data.QueryBuilder.create().setWhereClause(`email = '${email}'`);
+                const existing = await Backendless.Data.of(TABLE).find(query);
 
-      } catch (error) {
-        console.error(error);
-        errorMessage.style.display = "block";
-        errorMessage.textContent = "Une erreur est survenue, réessayez.";
-      }
-    });
+                if (existing.length > 0) {
+                    errorMessage.style.display = "block";
+                    errorMessage.textContent = "Ce compte existe déjà !";
+                    return;
+                }
 
-    // Empêcher retour arrière
-    history.pushState(null, null, location.href);
-    window.onpopstate = function () { history.go(1); };
-  </script>
+                const membre = { email, nom, institut, option, genre, abonnement, montant };
+                await Backendless.Data.of(TABLE).save(membre);
 
+                successMessage.style.display = "block";
+                errorMessage.style.display = "none";
+                form.reset();
+
+                setTimeout(() => {
+                    window.location.replace("login.html");
+                }, 8000);
+
+            } catch (error) {
+                console.error(error);
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "Une erreur est survenue, réessayez.";
+            }
+        });
+
+        // Empêcher retour arrière
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () { history.go(1); };
+    </script>
 </body>
 </html>
